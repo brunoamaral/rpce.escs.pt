@@ -1,0 +1,272 @@
+---
+layout: blank
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESCS Events Timeline</title>
+    <style>
+			:root {
+				--primary-color: #212121;
+				--background-color: #111;
+				--font: sans-serif;
+				--escs-verde: #275A4C;
+				--escs-vermelho: #A12E32;
+				--escs-amarelo: #E5AA49;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+/*				background: var(--background-color);*/
+				background: #F0F0F2;
+				font-family: var(--font);
+				display: flex;
+				justify-content: center;
+			}
+			
+			/* Timeline Container */
+			.timeline {
+				background: #F0F0F2;
+				margin: 20px auto;
+				padding: 20px;
+			}
+			
+			/* Card container */
+			.card {
+				position: relative;
+				max-width: 400px;
+			}
+			
+			/* setting padding based on even or odd */
+			.card:nth-child(odd) {
+				padding: 30px 0 30px 30px;
+			}
+			.card:nth-child(even) {
+				padding: 30px 30px 30px 0;
+			}
+			/* Global ::before */
+			.card::before {
+				content: "";
+				position: absolute;
+				width: 50%;
+				border: solid var(--escs-amarelo);
+			}
+			
+			/* Setting the border of top, bottom, left */
+			.card:nth-child(odd)::before {
+				left: 0px;
+				top: -4.5px;
+				bottom: -4.5px;
+				border-width: 5px 0 5px 5px;
+				border-radius: 50px 0 0 50px;
+			}
+			
+			/* Setting the border of top, bottom, right */
+			.card:nth-child(even)::before {
+				right: 0;
+				top: 0;
+				bottom: 0;
+				border-width: 5px 5px 5px 0;
+				border-radius: 0 50px 50px 0;
+			}
+			
+			/* Removing the border if it is the first card */
+			.card:first-child::before {
+				border-top: 0;
+				border-top-left-radius: 0;
+			}
+			
+			/* Removing the border if it is the last card  and it's odd */
+			.card:last-child:nth-child(odd)::before {
+				border-bottom: 0;
+				border-bottom-left-radius: 0;
+			}
+			
+			/* Removing the border if it is the last card  and it's even */
+			.card:last-child:nth-child(even)::before {
+				border-bottom: 0;
+				border-bottom-right-radius: 0;
+			}
+			
+			/* Information about the timeline */
+			.info {
+				display: flex;
+				flex-direction: column;
+				background: #333;
+				color: gray;
+				border-radius: 10px;
+				padding: 10px;
+			}
+			
+			/* Title of the card */
+			.title {
+				color: var(--escs-amarelo);
+				position: relative;
+			}
+			
+			/* Timeline dot  */
+			.title::before {
+				content: "";
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background: white;
+				border-radius: 999px;
+				border: 3px solid var(--escs-vermelho);
+			}
+			
+			/* text right if the card is even  */
+			.card:nth-child(even) > .info > .title {
+				text-align: right;
+			}
+			
+			/* setting dot to the left if the card is odd */
+			.card:nth-child(odd) > .info > .title::before {
+				left: -45px;
+			}
+			
+			/* setting dot to the right if the card is odd */
+			.card:nth-child(even) > .info > .title::before {
+				right: -45px;
+			}
+			
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="outer">
+            <!-- 1990s Section -->
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">1990-1991</h3>
+                    <p>1ª Turma RP</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">1993-1994</h3>
+                    <p>Inauguração do novo edifício da ESCS</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">1999</h3>
+                    <p>Assinatura do 1º Protocolo entre a ESCS e a APCE</p>
+                </div>
+            </div>
+
+            <!-- 2000s Section -->
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2003-11</h3>
+                    <p>VI Encontro de Departamento de Comunicação Organizacional</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2004-11</h3>
+                    <p>VII Encontro de Departamento de Comunicação Organizacional</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2005</h3>
+                    <p>1ª participação da licenciatura de RPCE no Globcom</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2006</h3>
+                    <p>Bolonha</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2007-06-27 to 2007-06-30</h3>
+                    <p>IV Simpósio Internacional sobre Comunicação Corporativa Global</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2008-10</h3>
+                    <p>XI Encontro do Departamento de Comunicação Organizacional</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2009-12</h3>
+                    <p>XII Encontro de Relações Públicas da ESCS</p>
+                </div>
+            </div>
+
+            <!-- 2010s Section -->
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2011-03</h3>
+                    <p>Euprera Spring Symposium</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2013-2014</h3>
+                    <p>Conferência Gregory Payne</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2014-2015</h3>
+                    <p>Homenagem Viegas Soares, Protocolo com Infarmed</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2015</h3>
+                    <p>Parceria com a GuessWhat e a Genzime</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2016</h3>
+                    <p>Curso Plataforma OSC</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2017-2018</h3>
+                    <p>2ª processo de Auto-Avaliação A3ES</p>
+                </div>
+            </div>
+
+            <!-- 2020s Section -->
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2020</h3>
+                    <p>3ª Edição PR OPEN DAY 2020</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2021</h3>
+                    <p>Hedcom 2021 - Online</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2022</h3>
+                    <p>5ª Edição PR OPEN DAY</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <h3 class="title">2023-01</h3>
+                    <p>Evento SOS Voz Amiga - Janeiro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
